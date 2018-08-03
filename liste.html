@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Annuaire de l'ifa</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="./data/data.json"></script>
+	
+</head>
+
+<body>
+	<h1 class="red" id="montitre">Liste de la promo detaillée</h1>
+	<div id="container">
+		
+	</div>
+	<script>
+		function getCookie(cname) {
+    		var name = cname + "=";
+    		console.log(document.cookie);
+		    var ca = document.cookie.split(';');
+		    console.log(ca);
+		    for(var i = 0; i < ca.length; i++) {
+		        var c = ca[i];
+		        while (c.charAt(0) == ' ') {
+		            c = c.substring(1);
+		        }
+		        if (c.indexOf(name) == 0) {
+		            return c.substring(name.length, c.length);
+		        }
+		    }
+		    return "";
+		}
+		var id = getCookie("id");
+		var container = document.getElementById("container");
+
+		var paraNom = document.createElement('p');
+		paraNom.innerHTML = promo[id].nom.toUpperCase();
+		container.appendChild(paraNom);
+
+		var paraPrenom = document.createElement('p');
+		document.getElementById("container").appendChild(paraPrenom).innerHTML = promo[id].prénom;
+
+		var paraAge = document.createElement('p');
+		document.getElementById("container").appendChild(paraAge).innerHTML = promo[id].age;
+
+		var paraVille = document.createElement('p');
+		document.getElementById("container").appendChild(paraVille).innerHTML = promo[id].ville;
+
+		var paraJavascript = document.createElement('p');
+		document.getElementById("container").appendChild(paraJavascript).innerHTML = promo[id].javascript;
+
+		var paraFav_web = document.createElement('p');
+		document.getElementById("container").appendChild(paraFav_web).innerHTML = promo[id].fav_web;
+
+		var paraFav_web_why = document.createElement('p');
+		document.getElementById("container").appendChild(paraFav_web_why).innerHTML = promo[id].fav_web_why;
+
+		var paraBefore_ifa = document.createElement('p');
+		document.getElementById("container").appendChild(paraBefore_ifa).innerHTML = promo[id].before_ifa;
+
+		var paraWhy_ifa = document.createElement('p');
+		document.getElementById("container").appendChild(paraWhy_ifa).innerHTML = promo[id].why_ifa;
+
+		var paraContact_mail = document.createElement('p');
+		document.getElementById("container").appendChild(paraContact_mail).innerHTML = promo[id].contact_mail;
+		
+	</script>
+
+	<a href="./index.html"><input type="button" name="Retour "value="Retour"/></a>
+	
+</body>
+</html>
